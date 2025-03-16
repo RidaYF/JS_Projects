@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPS Game</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 5px;
+}
+body{
+  font-family:'Nunito';
+  background-color: black;
+  color: white;
+}
+.button-rps{
+  background-color: black;
+  border-radius: 50%;
+  padding: 10px;
+  border:2px solid white;;
+}
+img{
+  width: 70px;
+  height: 70px;
+}
+.h3-rps{
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  
+}
+p{
+  margin-top: 10px;
+}
+.p1{
+  font-size: 23px;
+  font-weight: bold;
+  margin-left: 15px;
+}
+.img-move{
+  width: 40px;
+  height: 40px;
+  
+}
+.p3{
+  margin: 20px 0px 20px 0px;
+}
+.p2{
+  margin: 10px 0px 10px 0px;
+}
+.button-reset{
+  padding: 10px;
+  background-color: rgb(17, 73, 115);
+  color: aliceblue;
+  border: none;
+  border-radius: 5px;
+}
+  </style>
+</head>
+<body>
+    <div class="div-rps">
+          <h3 class="h3-rps">Rock Paper Scissors </h3>
+          <button class="button-rps button-rock" onclick="
+      const randomNumber = Math.random();
+      if(randomNumber>0 && randomNumber<0.3333333333){
+        score.draw++;
+
+        document.querySelector('.js-result').innerHTML ='You Drew !';
+        document.querySelector('.js-move').innerHTML = `Rida  <img class=\'img-move\' src=\'rock-emoji.png\' alt=\'rock\'>  <img src=\'rock-emoji.png\' alt=\'rock\'class=\'img-move\'> Computer`;
+
+      }
+      else if(randomNumber>0.3333333333 && randomNumber<0.6666666667){
+        score.losses++;
+        document.querySelector('.js-result').innerHTML ='You Lost !';
+        document.querySelector('.js-move').innerHTML =`Rida  <img class=\'img-move\' src=\'rock-emoji.png\' alt=\'rock\'>  <img src=\'paper-emoji.png\' alt=\'rock\'class=\'img-move\'> Computer`;
+        }
+      else {
+        score.wins++;
+        document.querySelector('.js-result').innerHTML ='You Won !';
+        document.querySelector('.js-move').innerHTML =`Rida  <img class=\'img-move\' src=\'rock-emoji.png\' alt=\'rock\'>  <img src=\'scissors-emoji.png\' alt=\'rock\'class=\'img-move\'> Computer`;
+                }
+      localStorage.setItem('score',JSON.stringify(score));
+      document.querySelector('.js-score').innerHTML =`wins:${score.wins} losses: ${score.losses} Draws: ${score.draw}` ;
+      "><img src="rock-emoji.png" alt="rock" ></button>
+
+
+
+      <button class="button-rps button-paper" onclick="
+      const randomNumber2 = Math.random();
+      if(randomNumber2>0 && randomNumber2<0.3333333333){
+
+        score.wins++;
+        document.querySelector('.js-result').innerHTML ='You Won !';
+        document.querySelector('.js-move').innerHTML =`Rida  <img class=\'img-move\' src=\'paper-emoji.png\' alt=\'rock\'>  <img src=\'rock-emoji.png\' alt=\'rock\'class=\'img-move\'> Computer`;
+          }
+      else if(randomNumber2>0.3333333333 && randomNumber2<0.6666666667){
+        score.draw++;
+        document.querySelector('.js-result').innerHTML ='You Drew !';
+        document.querySelector('.js-move').innerHTML =`Rida  <img class=\'img-move\' src=\'paper-emoji.png\' alt=\'rock\'>  <img src=\'paper-emoji.png\' alt=\'rock\'class=\'img-move\'> Computer`;
+          }
+      else {
+        score.losses++;
+        document.querySelector('.js-result').innerHTML ='You Lost !';
+        document.querySelector('.js-move').innerHTML =`Rida  <img class=\'img-move\' src=\'paper-emoji.png\' alt=\'rock\'>  <img src=\'scissors-emoji.png\' alt=\'rock\'class=\'img-move\'> Computer`;
+                }
+      localStorage.setItem('score',JSON.stringify(score));
+      document.querySelector('.js-score').innerHTML =`wins:${score.wins} losses: ${score.losses} Draws: ${score.draw}` ;
+      "><img src="paper-emoji.png" alt="rock"> </button>
+
+      <button class="button-rps button-scissors" onclick="
+      const randomNumber3 = Math.random();
+      if(randomNumber3>0 && randomNumber3<0.3333333333){
+
+        score.losses++;
+        document.querySelector('.js-result').innerHTML ='You Lost !';
+        document.querySelector('.js-move').innerHTML =`Rida  <img class=\'img-move\' src=\'scissors-emoji.png\' alt=\'rock\'>  <img src=\'rock-emoji.png\' alt=\'rock\'class=\'img-move\'> Computer`;
+              }
+      else if(randomNumber3>0.3333333333 && randomNumber3<0.6666666667){
+        score.wins++;
+        document.querySelector('.js-result').innerHTML ='You Won !';
+        document.querySelector('.js-move').innerHTML =`Rida  <img class=\'img-move\' src=\'scissors-emoji.png\' alt=\'rock\'>  <img src=\'paper-emoji.png\' alt=\'rock\'class=\'img-move\'> Computer`;
+              }  
+      else {
+        score.draw++;
+        document.querySelector('.js-result').innerHTML ='You Drew !';
+        document.querySelector('.js-move').innerHTML =`Rida  <img class=\'img-move\' src=\'scissors-emoji.png\' alt=\'rock\'>  <img src=\'scissors-emoji.png\' alt=\'rock\'class=\'img-move\'> Computer`;
+            }
+      localStorage.setItem('score',JSON.stringify(score));
+      document.querySelector('.js-score').innerHTML =`wins:${score.wins} losses: ${score.losses} Draws: ${score.draw}` ;
+      "><img src="scissors-emoji.png" alt="rock"></button> <br>
+
+      
+      <p class="p1 js-result"></p>
+      <p class="p2 js-move"></p>
+      <p class="p3 js-score"></p>
+      <button class="button-reset" onclick="
+      score.wins=0;
+      score.draw=0;
+      score.losses=0;
+      localStorage.removeItem('score');
+      document.querySelector('.js-score').innerHTML =`wins:${score.wins} losses: ${score.losses} Draws: ${score.draw}` ;
+      ">Reset Score</button> 
+  </div>
+  </body>
+<script>
+
+const score = JSON.parse(localStorage.getItem('score')) || {wins:0,losses:0,draw:0}
+
+
+document.querySelector('.js-score').innerHTML =`wins:${score.wins},  losses: ${score.losses},   Draws: ${score.draw}` ;
+</script> 
+
+
+</html> 

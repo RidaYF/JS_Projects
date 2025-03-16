@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyPage</title>
+ 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+*{
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+body{
+  font-family:'Nunito';
+  margin:20px;
+  background-color: rgb(0, 0, 0);
+}
+.calc{
+  position: relative;
+  top: 150px;
+  left: 200px;
+  width: 300px;
+  height: 370px;
+  background-color: black;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
+button{
+  display: inline-block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  background-color: rgb(65, 64, 64);
+  color: azure;
+  border: none;
+}
+.button-0{
+  left: 50px;
+  top: 250px;
+}
+.button-point{
+  left:105px;
+  top: 250px;
+}
+.button-equal{
+  left: 160px;
+  top: 250px;
+}
+.button-div{
+  left: 215px;
+  top: 250px;
+  background-color: orange;
+}
+.button-1{
+  left: 50px;
+  top: 195px;
+}
+.button-2{
+  left:105px;
+  top: 195px;
+}
+.button-3{
+  left: 160px;
+  top: 195px;
+}
+.button-mul{
+  left: 215px;
+  top: 195px;
+  background-color: orange;
+}
+.button-4{
+  left: 50px;
+  top:140px;
+}
+.button-5{
+  left:105px;
+  top:140px;
+}
+
+.button-6{
+  left: 160px;
+  top:140px;
+}
+.button-subs{
+  left: 215px;
+  top:140px;
+  background-color: orange;
+}
+.button-7{
+  left: 50px;
+  top:85px;
+}
+.button-8{
+  left:105px;
+  top:85px;
+}
+.button-9{
+  left: 160px;
+  top:85px;
+}
+
+.button-plus{
+  left: 215px;
+  top:85px;
+  background-color: orange;
+}
+.input-calc{
+  display: inline-block;
+  position: absolute;
+  top:30px;
+  left: 50px;
+  width: 200px;
+  height: 30px;
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 25px;
+  
+}
+.button-clear{
+  top: 305px;
+  left: 50px;
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="calc">
+    <p class="input-calc"></p>
+
+    <button class="button-0" onclick="
+     if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '0';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '0';
+      }
+    " >0</button>
+    <button class="button-point"  onclick="
+    document.querySelector('.input-calc').innerHTML+='.';
+  ">.</button>
+    <button class="button-equal" onclick="
+  try {
+    document.querySelector('.input-calc').innerHTML = eval(document.querySelector('.input-calc').innerHTML);
+  } catch (e) {
+    document.querySelector('.input-calc').innerHTML = 'Error';
+  }
+">=</button>
+
+    <button class="button-1"  onclick="
+   if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '1';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '1';
+      }
+  ">1</button>
+    <button class="button-2"  onclick="
+    if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '2';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '2';
+      }
+  ">2</button>
+    <button class="button-3"  onclick="
+    if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '3';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '3';
+      }
+  ">3</button>
+    <button class="button-4"  onclick="
+    if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '4';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '4';
+      }
+  ">4</button>
+    <button class="button-5"  onclick="
+   if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '5';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '5';
+      }
+  ">5</button>
+    <button class="button-6"  onclick="
+    if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '6';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '6';
+      }
+  ">6</button>
+    <button class="button-7"  onclick="
+    if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '7';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '7';
+      }
+  ">7</button>
+    <button class="button-8"  onclick="
+    if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '8';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '8';
+      }
+  ">8</button>
+    <button class="button-9"  onclick="
+    if (document.querySelector('.input-calc').innerHTML === '0') {
+        document.querySelector('.input-calc').innerHTML = '9';
+      } else {
+        document.querySelector('.input-calc').innerHTML += '9';
+      }
+  ">9</button>
+    <button class="button-div"  onclick="
+    document.querySelector('.input-calc').innerHTML+='/';
+  ">/</button>
+    <button class="button-mul"  onclick="
+    document.querySelector('.input-calc').innerHTML+='*';
+  ">*</button>
+    <button class="button-subs"  onclick="
+    document.querySelector('.input-calc').innerHTML+='-';
+  ">-</button>
+    <button class="button-plus"  onclick="
+    document.querySelector('.input-calc').innerHTML+='+';
+  ">+</button>
+    <button class="button-clear"  onclick="
+    document.querySelector('.input-calc').innerHTML='0';
+  ">clear</button>
+  
+  </div>
+  </body>
+</html>

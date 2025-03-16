@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html{
+  display: flex;
+  justify-content: center;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.h1-cube{
+  font-size: 2.5rem;
+  font-weight: bolder;
+}
+
+.main-cube{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.cube-element{
+  border: 7px solid black;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 2rem;
+  margin-top: 100px;
+}
+
+.button-cube{
+  margin-top: 170px;
+  margin-left: 137px;
+  width: 100px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(240, 86, 30);
+}
+
+.button-cube:hover{
+  background-color: rgb(238, 107, 59);
+}
+  
+@keyframes rotate {
+  from {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+
+/* Apply the animation to the element */
+
+  </style>
+</head>
+<body>
+  <h1 class="h1-cube">Dice Roll Simulator</h1>
+  <div class="main-cube">
+    <div class="cube-element cube1">1</div>
+
+  </div>
+  <button class="button-cube" id="button-cube">Roll Dice</button>
+  <div class="result-cube"></div>
+</body>
+<script > 
+  let rollHistory = [];
+  
+  
+  
+  document.querySelector('.button-cube').addEventListener('click',()=>{
+   let guess =Math.floor(Math.random()*6)+1;
+   if(guess === 1){
+     
+     document.querySelector('.cube1').style.animation = 'none';
+     void document.querySelector('.cube1').offsetWidth;
+     document.querySelector('.cube1').style.animation = 'rotate 0.5s linear forwards ';
+     
+     
+   }
+    if(guess === 2){
+    
+     document.querySelector('.cube1').style.animation = 'none';
+     void document.querySelector('.cube1').offsetWidth;
+     document.querySelector('.cube1').style.animation = 'rotate 0.5s linear forwards ';
+     
+     
+   }
+   if(guess === 3){
+     
+     document.querySelector('.cube1').style.animation = 'none';
+     void document.querySelector('.cube1').offsetWidth;
+     document.querySelector('.cube1').style.animation = 'rotate 0.5s linear forwards ';
+     
+     
+   }
+   if(guess === 4){
+     
+     document.querySelector('.cube1').style.animation = 'none';
+     void document.querySelector('.cube1').offsetWidth;
+     document.querySelector('.cube1').style.animation = 'rotate 0.5s linear forwards ';
+     
+     
+   }
+   if(guess === 5){
+     
+     document.querySelector('.cube1').style.animation = 'none';
+     void document.querySelector('.cube1').offsetWidth;
+     document.querySelector('.cube1').style.animation = 'rotate 0.5s linear forwards ';
+     
+     
+   }
+   if(guess === 6){
+    
+     document.querySelector('.cube1').style.animation = 'none';
+     void document.querySelector('.cube1').offsetWidth;
+     document.querySelector('.cube1').style.animation = 'rotate 0.5s linear forwards ';
+     
+     
+   } 
+  
+   setTimeout(() => {
+          document.querySelector('.cube1').textContent = `${guess}`;
+         rollHistory.push(guess);
+         updateRoll();
+       }, 500);
+ }); 
+ 
+ function updateRoll(){
+   document.querySelector('.result-cube').innerHTML="";
+   for(let i=0 ;i<rollHistory.length ; i++ ){
+     const elem = document.createElement('p');
+     elem.innerHTML = `Roll ${i+1} : ${rollHistory[i]}`
+     document.querySelector('.result-cube').appendChild(elem);
+     
+   }
+ }
+ 
+ </script>
+</html>
